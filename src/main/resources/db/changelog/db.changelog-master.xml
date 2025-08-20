@@ -1,0 +1,19 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="1" author="nikita">
+        <createTable tableName="task">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="name" type="varchar(255)"/>
+            <column name="status" type="varchar(50)"/>
+        </createTable>
+    </changeSet>
+    <include file="src/main/resources/db/changelog/changes/001-create-table-task.xml"/>
+    <include file="src/main/resources/db/changelog/changes/002-add-deadline-to-task.xml"/>
+</databaseChangeLog>
+
